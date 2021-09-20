@@ -12,9 +12,18 @@ import {
     TOGGLE_CART
 } from './actions';
 
+//creating default state like our GlobalState object
+const defaultState = {
+    products: [],
+    cart: [],
+    cartOpen: false,
+    categories: [],
+    currentCategory: ''
+}
 
-export const reducer = (state, action) => {
+export const reducer = (state = defaultState, action) => {
     switch (action.type) {
+        //checking action type value and returning new state object with an updated products array
         case UPDATE_PRODUCTS:
             return {
                 ...state,
@@ -69,7 +78,7 @@ export const reducer = (state, action) => {
                 ...state,
                 cartOpen: !state.cartOpen
             };
-
+        //checking action type value and returning new state object with an updated categories array
         case UPDATE_CATEGORIES:
             return {
                 ...state,
@@ -87,8 +96,5 @@ export const reducer = (state, action) => {
     }
 };
 
-//useProductReducer used to initialize our global state object 
-export function useProductReducer(initialState) {
-    // provide us with the functionality for updating that state by automatically running it through our custom reducer() function
-    return useReducer(reducer, initialState);
-}
+//export reducer
+export default reducer;
