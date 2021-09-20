@@ -1,5 +1,3 @@
-//react hook that will know how to take in our state and uodate it through our reducer function
-import { useReducer } from 'react';
 import {
     UPDATE_PRODUCTS,
     UPDATE_CATEGORIES,
