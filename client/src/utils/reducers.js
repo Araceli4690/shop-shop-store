@@ -45,6 +45,9 @@ export const reducer = (state, action) => {
                 cart: [...state.cart, ...action.products],
             };
         case REMOVE_FROM_CART:
+            let newState = state.cart.filter(product => {
+                return product._id !== action._id;
+            });
             return {
                 ...state,
                 cartOpen: newState.length > 0,
