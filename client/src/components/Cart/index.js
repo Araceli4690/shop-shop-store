@@ -16,22 +16,23 @@ const Cart = () => {
     const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
     useEffect(() => {
+        if (data) {
+            stripePromise.then((res) => {
+                res.redirectToCheckout({ sessionId: data.checkout.session })
+            })
+        }
+    }, [data]);
+
+    useEffect(() => {
         async function getCart() {
             const cart = await idbPromise('cart', 'get');
             dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
         };
+
         if (!state.cart.length) {
             getCart();
         }
     }, [state.cart.length, dispatch]);
-
-    useEffect(() => {
-        if (data) {
-            stripePromise.then((res) => {
-                res.redirectToCheckout({ sessionId: data.checkout.session });
-            });
-        }
-    }, [data]);
 
     function toggleCart() {
         dispatch({ type: TOGGLE_CART });
@@ -44,7 +45,7 @@ const Cart = () => {
         });
         return sum.toFixed(2);
     }
-    // fucntion loops over items saved in state.cart and adds IDs to a new productOds array
+
     function submitCheckout() {
         const productIds = [];
 
@@ -53,6 +54,7 @@ const Cart = () => {
                 productIds.push(item._id);
             }
         });
+
         getCheckout({
             variables: { products: productIds }
         });
@@ -77,8 +79,10 @@ const Cart = () => {
                     {state.cart.map(item => (
                         <CartItem key={item._id} item={item} />
                     ))}
+
                     <div className="flex-row space-between">
                         <strong>Total: ${calculateTotal()}</strong>
+
                         {
                             Auth.loggedIn() ?
                                 <button onClick={submitCheckout}>

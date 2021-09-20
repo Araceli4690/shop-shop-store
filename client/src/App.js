@@ -15,9 +15,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
+
 //import GlobalState
 import { StoreProvider } from './utils/GlobalState';
-import OrderHistory from './pages/OrderHistory';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
