@@ -1,5 +1,3 @@
-//definning how 3 parts of our state will be maintained and updated
-
 //update products used by productList component 
 export const UPDATE_PRODUCTS = "UPDATE_PRODUCTS";
 //take the list of categories retrieved from the server by Apollo and store it in this global state

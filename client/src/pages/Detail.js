@@ -6,6 +6,7 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import spinner from '../assets/spinner.gif';
 import Cart from '../components/Cart';
 import { idbPromise } from '../utils/helpers';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
@@ -14,7 +15,13 @@ import {
 } from '../utils/actions';
 
 function Detail() {
-  const [state, dispatch] = useStoreContext();
+  //usign redux useSelector to declare state
+  const state = useSelector((state) => {
+    return state
+  });
+  //using redux useDispatch to declare dispatch
+  const dispatch = useDispatch();
+
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({})
@@ -41,13 +48,16 @@ function Detail() {
         type: ADD_TO_CART,
         product: { ...currentProduct, purchaseQuantity: 1 }
       });
+      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
     }
   };
 
   useEffect(() => {
+    //if product is in global store find and set
     if (products.length) {
       setCurrentProduct(products.find(product => product._id === id));
-    } else if (data) {
+    } //otherwise retrieve from server
+    else if (data) {
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
@@ -86,8 +96,11 @@ function Detail() {
           <p>{currentProduct.description}</p>
 
           <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
+            <strong>Price:</strong>
+            ${currentProduct.price}{' '}
+            <button onClick={addToCart}>
+              Add to Cart
+            </button>
             <button
               disabled={!cart.find(p => p._id === currentProduct._id)}
               onClick={removeFromCart}
