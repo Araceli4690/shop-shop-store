@@ -15,7 +15,7 @@ This e-commerce platform was refactored to use Redux to manage global state inst
 - Redux state managment 
 - React Front-end
 - MongoDB database
-- mode.js
+- node.js
 - express.js
 - Apollo-Server
 - GraphQL
@@ -27,7 +27,8 @@ To run the application clone the code and from the root of the project directory
 - Here are some guides on getting started with React Redux https://react-redux.js.org/introduction/getting-started 
 
 ## Deployed-app
-The app was deployed on [Heroku](https://www.heroku.com) using MongoDB Atlas for the apps database. To view the deployed app in action click on the following link  
+The app was deployed on [Heroku](https://www.heroku.com) using MongoDB Atlas for the apps database. To view the deployed app in action click on the following link
+https://salty-plateau-17709.herokuapp.com/ 
 
 ![](./client/public/shop-shop.png)
 
