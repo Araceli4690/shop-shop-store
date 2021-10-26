@@ -205,17 +205,28 @@ input:focus {
 .error-text {
   color: var(--error);
 }
+.landing{
+  background-color: rgb(9, 239, 255);
+}
 .intro{
-  padding:  50px ;
+  padding:  90px ;
   margin: 90px;
-  margin-top: 150px;
-  width: 40%;
+  margin-top: 120px;
+  width: 90%;
   line-height: 3rem;
   font-size: 20px;
+  font-family: 'Rubik', sans-serif;
+ 
 }
 .landingImg{
-  padding-top: 200px;
+  padding-top: 80px;
+  
 }
+.homeButton{
+  font-size: 18px;
+  padding: 5px 90px 5px 90px;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
