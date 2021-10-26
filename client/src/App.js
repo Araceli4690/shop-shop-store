@@ -16,6 +16,7 @@ import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+import Landing from './pages/Landing';
 import reducer from './utils/reducers'
 //import provider form redux
 import { Provider } from 'react-redux';
