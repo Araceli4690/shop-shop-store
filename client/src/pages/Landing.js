@@ -6,7 +6,7 @@ import shopImg2 from "../assets/shop2.png"
 
 const Landing = () => {
     return (
-        <section >
+        <section className='landingPage'>
             <Cart />
             <div className='landing' style={{ display: 'flex' }}>
                 <div className='intro'>
@@ -28,13 +28,13 @@ const Landing = () => {
                 </div>
             </div>
             <div style={{ display: 'flex' }}>
-                <div className='landingImg'>
+                <div className='landingImg' style={{ marginLeft: '10px' }}>
                     <img src={shopImg2} alt='landing'></img>
                 </div>
-                <div className='intro'>
+                <div className='intro' style={{ padding: '40px' }}>
 
                     <div>
-                        Your one stop shop destination for all your needs!
+                        Shop from anywhere at any time!
                     </div>
                     <br />
                     <div className="button-container">

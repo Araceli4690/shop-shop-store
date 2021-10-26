@@ -206,8 +206,10 @@ input:focus {
   color: var(--error);
 }
 .landing{
-  background-color: rgb(9, 239, 255);
+  background-image: linear-gradient(to bottom right, rgb(0, 204, 255), rgb(0, 255, 179));
 }
+
+
 .intro{
   padding:  90px ;
   margin: 90px;
@@ -219,7 +221,8 @@ input:focus {
  
 }
 .landingImg{
-  padding-top: 80px;
+  padding-top: 100px;
+  margin: 80px 0px 80px 0px;
   
 }
 .homeButton{
@@ -230,5 +233,58 @@ input:focus {
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
+  }
+  .landingPage{
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .intro{
+    padding:  0px ;
+    margin: 40px;
+    margin-top: 100px;
+    width: 100%;
+    line-height: 2rem;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+   
+  }
+  .homeButton{
+    font-size: 10px;
+    padding: 5px 50px 5px 50px;
+  }
+  .landingImg{
+    padding-top: 80px;
+    margin: 10px 0px 10px 0px;
+    
+  }
+}
+
+@media screen and (max-width: 575px){
+  .landingPage{
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .intro{
+    padding:  0px ;
+    margin: 10px;
+    margin-top: 100px;
+    width: 90%;
+    line-height: 2rem;
+    font-size: 12px;
+    font-family: 'Rubik', sans-serif;
+   
+  }
+  .homeButton{
+    font-size: 8px;
+    padding: 2px 50px 2px 50px;
+  }
+  .landingImg{
+    padding-top: 80px;
+    margin: 10px 0px 10px 0px;
+    
   }
 }
