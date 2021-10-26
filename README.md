@@ -31,7 +31,7 @@ The app was deployed on [Heroku](https://www.heroku.com) using MongoDB Atlas. To
 https://salty-plateau-17709.herokuapp.com/ 
 
 - sample of app 
-![](./client/public/shop-shop.png)
+![](./client/public/Shop-Shop.gif)
 
 ## Contact
 If you have any questions feel free to contact me through my [Github](https://github.com/Araceli4690).
