@@ -5,13 +5,23 @@ import shopImg from "../assets/shop.png"
 
 const Landing = () => {
     return (
-        <section>
+        <section style={{ display: 'flex' }}>
             <Cart />
-            <div>
-                <img src={shopImg} alt='landing'></img>
+            <div className='intro'>
+
+                <div>
+                    Your one stop shop destination for all your needs. Shop our store and view all the great deals!
+                </div>
+                <div className="button-container">
+
+                    <Link to="/Home">
+                        <button className="homeButton">Shop Now</button>
+                    </Link>
+                </div>
             </div>
-            <div>
-                test
+
+            <div className='landingImg'>
+                <img src={shopImg} alt='landing'></img>
             </div>
         </section>
     )
