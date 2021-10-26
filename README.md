@@ -1,5 +1,5 @@
 # Redux Shop-Shop
-An e-commerce platform that uses Redux to manage global state instead of the Context API.
+An e-commerce platform that uses Redux to manage global state.
 
 ## table of contents 
 - [Purpose](#purpose)
@@ -18,18 +18,19 @@ This e-commerce platform was refactored to use Redux to manage global state inst
 - node.js
 - express.js
 - Apollo-Server
-- GraphQL
+
 
 ## Getting-started
-To run the application clone the code and from the root of the project directory and run `npm i` to install the necessary packages then run `npm run develop`. This way you are able to run both the client and server side on a single terminal and view the fully functioning app in the browser.
+To run the application clone the code and from the root of the project directory run `npm i` to install the necessary packages then run `npm run develop`. This way you are able to run both the client and server side on a single terminal and view the fully functioning app in the browser.
 
 - to install react-redux on an existing React app run `npm install react-redux` through your terminal
 - Here are some guides on getting started with React Redux https://react-redux.js.org/introduction/getting-started 
 
 ## Deployed-app
-The app was deployed on [Heroku](https://www.heroku.com) using MongoDB Atlas for the apps database. To view the deployed app in action click on the following link
+The app was deployed on [Heroku](https://www.heroku.com) using MongoDB Atlas. To view the deployed app in action click on the following link
 https://salty-plateau-17709.herokuapp.com/ 
 
+- sample of app 
 ![](./client/public/shop-shop.png)
 
 ## Contact
